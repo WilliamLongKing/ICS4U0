@@ -45,24 +45,24 @@ public class MyHashTable {
 
 
 
-	public int searchByEmployeeNumber(int employeeNum) {
+	public EmployeeInfo searchByEmployeeNumber(int employeeNum) {
 		int bucketNumber = calcBucket(employeeNum);
 		for(int i = 0; i < buckets[bucketNumber].size(); i++) {
 			if (buckets[bucketNumber].get(i).getEmpNum() == employeeNum) {
-				return i;	
+				return buckets[bucketNumber].get(i);	
 			}
 		}
 		// Determine the position of the employee in the ArrayList for the bucket that employee hashes to.
 		// If the employee is not found, return -1.
 
-		return -1;
+		return null;
 	}
 
 
 
 	public EmployeeInfo removeEmployee(int employeeNum) {
 		int bucketNumber = calcBucket(employeeNum);
-		EmployeeInfo employeeRemoved = buckets[bucketNumber].get(searchByEmployeeNumber(employeeNum));
+		EmployeeInfo employeeRemoved = searchByEmployeeNumber(employeeNum);
 		for(int i = 0; i < buckets[bucketNumber].size(); i++) {
 			if (buckets[bucketNumber].get(i) == employeeRemoved) {
 				buckets[bucketNumber].remove(searchByEmployeeNumber(employeeNum));

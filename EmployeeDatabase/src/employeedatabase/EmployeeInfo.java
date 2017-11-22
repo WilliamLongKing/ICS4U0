@@ -1,7 +1,7 @@
 package employeedatabase;
 public class EmployeeInfo {
 
-	protected int empNum;
+    protected int empNum;
     protected String firstName;
     protected String lastName;
     protected int sex; // encode e.g. 0 for M, 1 for F, etc.

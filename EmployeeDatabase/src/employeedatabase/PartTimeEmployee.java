@@ -25,4 +25,11 @@ public class PartTimeEmployee extends EmployeeInfo{
 		return hourlyWage;
 	}
 	
+        public double getHoursPerWeek() {
+            return hoursPerWeek;
+        }
+        
+        public double getWeeksPerYear() {
+            return weeksPerYear;
+        }
 }
