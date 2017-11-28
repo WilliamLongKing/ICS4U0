@@ -16,5 +16,9 @@ public class FullTimeEmployee extends EmployeeInfo{
 	public double calcAnnualNetIncome() {
 		return calcAnnualGrossIncome() * (1 - this.deductRate);
 	}
+        
+        public void setYearlySalary(double yearlySalary) {
+            this.yearlySalary = yearlySalary;
+        }
 	
 }

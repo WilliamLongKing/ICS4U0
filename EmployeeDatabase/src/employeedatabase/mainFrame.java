@@ -83,6 +83,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         searchYearlySalary = new javax.swing.JLabel();
         searchYearlySalary1 = new javax.swing.JLabel();
+        editYearlySalary = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         searchHourlyWage = new javax.swing.JLabel();
         searchHoursWeek = new javax.swing.JLabel();
@@ -90,6 +91,9 @@ public class MainFrame extends javax.swing.JFrame {
         searchHourlyWage1 = new javax.swing.JLabel();
         searchHoursWeek1 = new javax.swing.JLabel();
         searchWeeksYear1 = new javax.swing.JLabel();
+        editWeeksYear = new javax.swing.JTextField();
+        editHoursWeek = new javax.swing.JTextField();
+        editHourlyWage = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         searchGender = new javax.swing.JLabel();
         searchEmpNum = new javax.swing.JLabel();
@@ -98,6 +102,15 @@ public class MainFrame extends javax.swing.JFrame {
         searchLocation = new javax.swing.JLabel();
         searchDeductRate = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
+        editFirstName = new javax.swing.JTextField();
+        editLastName = new javax.swing.JTextField();
+        editLocation = new javax.swing.JTextField();
+        editGender = new javax.swing.JTextField();
+        editDeductRate = new javax.swing.JTextField();
+        editEmpNum = new javax.swing.JTextField();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
@@ -520,6 +533,11 @@ public class MainFrame extends javax.swing.JFrame {
                 jCheckBox3ActionPerformed(evt);
             }
         });
+        jCheckBox3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jCheckBox3KeyPressed(evt);
+            }
+        });
 
         jCheckBox4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jCheckBox4.setText("Part Time Employee");
@@ -529,12 +547,19 @@ public class MainFrame extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
+        jCheckBox4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jCheckBox4KeyPressed(evt);
+            }
+        });
 
         searchYearlySalary.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         searchYearlySalary.setText("Yearly Salary:");
 
         searchYearlySalary1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         searchYearlySalary1.setText("0");
+
+        editYearlySalary.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -544,14 +569,19 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(searchYearlySalary)
                 .addGap(149, 149, 149)
                 .addComponent(searchYearlySalary1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(editYearlySalary, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(searchYearlySalary)
-                .addComponent(searchYearlySalary1))
+                .addComponent(searchYearlySalary1)
+                .addComponent(editYearlySalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        editYearlySalary.setVisible(false);
 
         searchHourlyWage.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         searchHourlyWage.setText("Hourly Wage:");
@@ -571,6 +601,17 @@ public class MainFrame extends javax.swing.JFrame {
         searchWeeksYear1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         searchWeeksYear1.setText("0");
 
+        editWeeksYear.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        editHoursWeek.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        editHourlyWage.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        editHourlyWage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editHourlyWageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -589,6 +630,11 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchHoursWeek1)
                             .addComponent(searchWeeksYear1))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(editHoursWeek, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editHourlyWage, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editWeeksYear, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -596,16 +642,24 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchHourlyWage)
-                    .addComponent(searchHourlyWage1))
-                .addGap(12, 12, 12)
+                    .addComponent(searchHourlyWage1)
+                    .addComponent(editHourlyWage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchHoursWeek)
-                    .addComponent(searchHoursWeek1))
-                .addGap(12, 12, 12)
+                    .addComponent(searchHoursWeek1)
+                    .addComponent(editHoursWeek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchWeeksYear)
-                    .addComponent(searchWeeksYear1)))
+                    .addComponent(searchWeeksYear1)
+                    .addComponent(editWeeksYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        editWeeksYear.setVisible(false);
+        editHoursWeek.setVisible(false);
+        editHourlyWage.setVisible(false);
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton8.setText("OK");
@@ -642,6 +696,52 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        editFirstName.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        editFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editFirstNameActionPerformed(evt);
+            }
+        });
+
+        editLastName.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        editLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editLastNameActionPerformed(evt);
+            }
+        });
+
+        editLocation.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        editGender.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        editDeductRate.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        editEmpNum.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+
+        jButton12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton12.setText("Edit Employee");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton13.setText("Cancel");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton14.setText("Save");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -650,20 +750,28 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8))
-                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jButton9)
+                                .addGap(140, 140, 140)
+                                .addComponent(jButton12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton8))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCheckBox3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox4))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jButton13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton14)))
+                        .addGap(48, 48, 48))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                        .addComponent(jCheckBox3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING)
@@ -674,7 +782,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel31))
                             .addComponent(searchLastName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchFirstName, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(95, 95, 95)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(searchLocation, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchEmpNum, javax.swing.GroupLayout.Alignment.LEADING)
@@ -682,8 +790,16 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(searchDeductRate, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchLastName1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchFirstName1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(48, 48, 48))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(editFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editEmpNum, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editGender, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editDeductRate, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(109, 109, 109))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -718,31 +834,57 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchFirstName1)
-                        .addGap(12, 12, 12)
-                        .addComponent(searchLastName1)
-                        .addGap(12, 12, 12)
-                        .addComponent(searchEmpNum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchGender)
-                        .addGap(12, 12, 12)
-                        .addComponent(searchLocation)
-                        .addGap(12, 12, 12)
-                        .addComponent(searchDeductRate)))
-                .addGap(12, 12, 12)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchFirstName1)
+                            .addComponent(editFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchLastName1)
+                            .addComponent(editLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchEmpNum)
+                            .addComponent(editEmpNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchGender)
+                            .addComponent(editGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchLocation)
+                            .addComponent(editLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchDeductRate)
+                            .addComponent(editDeductRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(8, 8, 8)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(8, 8, 8)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton13)
+                    .addComponent(jButton14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8)
-                    .addComponent(jButton9)))
+                    .addComponent(jButton9)
+                    .addComponent(jButton12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setVisible(false);
         jPanel7.setVisible(false);
         jPanel3.setVisible(false);
         jPanel8.setVisible(false);
+        editFirstName.setVisible(false);
+        editLastName.setVisible(false);
+        editLocation.setVisible(false);
+        editGender.setVisible(false);
+        editDeductRate.setVisible(false);
+        editEmpNum.setVisible(false);
+        jButton13.setVisible(false);
+        jButton14.setVisible(false);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -797,6 +939,11 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
@@ -812,12 +959,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 95, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -836,9 +978,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setVisible(false);
@@ -850,7 +992,7 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public void reset() {
+     public void reset() {
         firstNameField.setText("");
         lastNameField.setText("");
         empNumField.setText("");
@@ -873,7 +1015,34 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel7.setVisible(false);
         jPanel8.setVisible(false);
         jButton2.setEnabled(false);
+        editFirstName.setText("");
+        editLastName.setText("");
+        editEmpNum.setText("");
+        editGender.setText("");
+        editLocation.setText("");
+        editDeductRate.setText("");
+        editYearlySalary.setText("");
+        editHourlyWage.setText("");
+        editHoursWeek.setText("");
+        editWeeksYear.setText("");
         
+        editFirstName.setVisible(false);
+        editLastName.setVisible(false);
+        editEmpNum.setVisible(false);
+        editGender.setVisible(false);
+        editLocation.setVisible(false);
+        editDeductRate.setVisible(false);
+        editYearlySalary.setVisible(false);
+        editHourlyWage.setVisible(false);
+        editHoursWeek.setVisible(false);
+        editWeeksYear.setVisible(false);
+        
+        jCheckBox3.setEnabled(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setEnabled(false);
+        jCheckBox4.setSelected(false);
+        jButton13.setVisible(false);
+        jButton14.setVisible(false);
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -991,6 +1160,23 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        searchFirstName1.setVisible(true);
+        searchLastName1.setVisible(true);
+        searchEmpNum.setVisible(true);
+        searchLocation.setVisible(true);
+        searchGender.setVisible(true);
+        searchDeductRate.setVisible(true);
+        searchYearlySalary1.setVisible(true);
+        searchHourlyWage1.setVisible(true);
+        searchHoursWeek1.setVisible(true);
+        searchWeeksYear1.setVisible(true);
+        
+        editFirstName.setVisible(false);
+        editLastName.setVisible(false);
+        editEmpNum.setVisible(false);
+        editGender.setVisible(false);
+        editLocation.setVisible(false);
+        editDeductRate.setVisible(false);
         
         EmployeeInfo employeeResult = employeeHashTable.searchByEmployeeNumber(Integer.parseInt(searchNumField.getText()));
         searchFirstName1.setText(employeeResult.getFirstName());
@@ -1016,7 +1202,9 @@ public class MainFrame extends javax.swing.JFrame {
         }
         jPanel4.setVisible(false);
         jPanel6.setVisible(true);
-        
+        jButton8.setVisible(true);
+        jButton9.setVisible(true);
+        jButton12.setVisible(true);
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -1027,10 +1215,20 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         // TODO add your handling code here:
+        jPanel7.setVisible(false);
+        jPanel8.setVisible(true);
+        jCheckBox3.setSelected(false);
+        editHourlyWage.setVisible(true);
+        editHoursWeek.setVisible(true);
+        editWeeksYear.setVisible(true);
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         // TODO add your handling code here:
+        jPanel7.setVisible(true);
+        jPanel8.setVisible(false);
+        jCheckBox4.setSelected(false);
+        editYearlySalary.setVisible(true);
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -1049,6 +1247,111 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel18.setText("Delete " + searchFirstName1.getText() + " " + searchLastName1.getText() + "?");
         jPanel5.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void editFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editFirstNameActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_editFirstNameActionPerformed
+
+    private void editHourlyWageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editHourlyWageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editHourlyWageActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        EmployeeInfo employeeResult = employeeHashTable.searchByEmployeeNumber(Integer.parseInt(searchNumField.getText()));
+        searchFirstName1.setVisible(false);
+        searchLastName1.setVisible(false);
+        searchEmpNum.setVisible(false);
+        searchLocation.setVisible(false);
+        searchGender.setVisible(false);
+        searchDeductRate.setVisible(false);
+        searchYearlySalary1.setVisible(false);
+        searchHourlyWage1.setVisible(false);
+        searchHoursWeek1.setVisible(false);
+        searchWeeksYear1.setVisible(false);
+        
+        editFirstName.setVisible(true);
+        editLastName.setVisible(true);
+        editEmpNum.setVisible(true);
+        editGender.setVisible(true);
+        editLocation.setVisible(true);
+        editDeductRate.setVisible(true);
+        
+        jCheckBox3.setEnabled(true);
+        jCheckBox4.setEnabled(true);
+        
+
+        if(employeeResult instanceof FullTimeEmployee) {
+            editYearlySalary.setVisible(true);
+        }
+        else if(employeeResult instanceof PartTimeEmployee) {
+            editHourlyWage.setVisible(true);
+            editHoursWeek.setVisible(true);
+            editWeeksYear.setVisible(true);
+        }
+
+        jButton8.setVisible(false);
+        jButton9.setVisible(false);
+        jButton12.setVisible(false);
+        jButton13.setVisible(true);
+        jButton14.setVisible(true);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        reset();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        EmployeeInfo employeeResult = employeeHashTable.searchByEmployeeNumber(Integer.parseInt(searchNumField.getText()));
+        
+        employeeHashTable.removeEmployee(Integer.parseInt(searchEmpNum.getText()));
+        
+        String firstName = editFirstName.getText();
+        String lastName = editLastName.getText();
+        int empNum = Integer.parseInt(editEmpNum.getText());
+        int gender = Integer.parseInt(editGender.getText());
+        int workLoc = Integer.parseInt(editLocation.getText());
+        double deductRate = Double.parseDouble(editDeductRate.getText());
+
+        if(jCheckBox3.isSelected() == true) {
+            double yearlySalary = Double.parseDouble(editYearlySalary.getText());
+            FullTimeEmployee FTE = new FullTimeEmployee(empNum, firstName, lastName, gender, workLoc, deductRate, yearlySalary);
+            employeeHashTable.addEmployee(FTE);
+            System.out.println(firstName);
+            System.out.println(lastName);
+            System.out.println(empNum);
+            System.out.println(yearlySalary);
+        }
+        else if(jCheckBox4.isSelected() == true) {
+            double hourlyWage = Double.parseDouble(editHourlyWage.getText());
+            double hoursWeek = Double.parseDouble(editHoursWeek.getText());
+            double weeksYear = Double.parseDouble(editWeeksYear.getText());
+            PartTimeEmployee PTE = new PartTimeEmployee(empNum, firstName, lastName, gender, workLoc, deductRate, hourlyWage, hoursWeek, weeksYear);
+            employeeHashTable.addEmployee(PTE);
+             System.out.println(firstName);
+            System.out.println(lastName);
+            System.out.println(empNum);
+            System.out.println(hourlyWage);
+        }
+       
+        employeeHashTable.displayContents();
+        reset();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jCheckBox3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3KeyPressed
+
+    private void jCheckBox4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox4KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4KeyPressed
+
+    private void editLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editLastNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1088,6 +1391,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField deductRateField;
+    private javax.swing.JTextField editDeductRate;
+    private javax.swing.JTextField editEmpNum;
+    private javax.swing.JTextField editFirstName;
+    private javax.swing.JTextField editGender;
+    private javax.swing.JTextField editHourlyWage;
+    private javax.swing.JTextField editHoursWeek;
+    private javax.swing.JTextField editLastName;
+    private javax.swing.JTextField editLocation;
+    private javax.swing.JTextField editWeeksYear;
+    private javax.swing.JTextField editYearlySalary;
     private javax.swing.JTextField empNumField;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JTextField genderField;
@@ -1096,6 +1409,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
