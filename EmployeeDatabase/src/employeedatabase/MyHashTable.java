@@ -1,4 +1,7 @@
 package employeedatabase;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 
 public class MyHashTable {
@@ -102,7 +105,49 @@ public class MyHashTable {
 		}
 
 	} // end displayContents
-
+    
+    public void readFile() {
+            List<String> records = new ArrayList<String>();
+            String line = null;
+            File file = new File("EmployeeList.csv");
+            try {
+                FileReader fileReader = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fileReader); 
+                while((line = reader.readLine()) != null) {
+                    records.add(line);
+                }
+                for(int i = 0; i < records.size(); i++) {
+                    line = records.get(i);
+                    String[] attributes = line.split(",");
+                    String employeeType = attributes[0];
+                    int empNum = Integer.parseInt(attributes[1]);
+                    String firstName = attributes[2];
+                    String lastName = attributes[3];
+                    int gender = Integer.parseInt(attributes[4]);
+                    int location = Integer.parseInt(attributes[5]);
+                    double deductRate = Double.parseDouble(attributes[6]);
+                    
+                    if("P".equals(employeeType)) {
+                        double hourlyWage = Double.parseDouble(attributes[7]);
+                        double hoursWeek = Double.parseDouble(attributes[8]);
+                        double weeksYear = Double.parseDouble(attributes[9]);
+                        PartTimeEmployee loadedPTE = new PartTimeEmployee(empNum, firstName, lastName, gender, location, deductRate, hourlyWage, hoursWeek, weeksYear);
+                        this.addEmployee(loadedPTE);
+                    }
+                    else if("F".equals(employeeType)) {
+                        double yearlySalary = Double.parseDouble(attributes[7]);
+                        FullTimeEmployee loadedFTE = new FullTimeEmployee(empNum, firstName, lastName, gender, location, deductRate, yearlySalary);
+                        this.addEmployee(loadedFTE);
+                    }
+                    
+                }
+                
+                reader.close();
+            } catch (Exception e) {
+                System.err.format("Exception occurred trying to read file");
+                e.printStackTrace();
+            }
+        }
 
 
 } // end class MyHashTable
