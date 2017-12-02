@@ -1,7 +1,10 @@
 package employeedatabase;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class MyHashTable {
@@ -10,7 +13,8 @@ public class MyHashTable {
 
 	// buckets is an array of ArrayList.  Each item in an ArrayList is an EmployeeInfo object.
 	private ArrayList<EmployeeInfo>[] buckets;
-
+        private ArrayList<EmployeeInfo>[] employeesToAdd;
+        private int numEmployees;
 
 	// CONSTRUCTOR
 
@@ -40,6 +44,7 @@ public class MyHashTable {
 		int employeeNumber = theEmployee.getEmpNum();
 		int bucketNumber = calcBucket(employeeNumber);
 		buckets[bucketNumber].add(theEmployee);
+                numEmployees++;
 		return true;
 
 		// Add the employee to the hash table.  Return true if employee is added successfully,
@@ -69,6 +74,7 @@ public class MyHashTable {
 		for(int i = 0; i < buckets[bucketNumber].size(); i++) {
 			if (buckets[bucketNumber].get(i) == employeeRemoved) {
 				buckets[bucketNumber].remove(searchByEmployeeNumber(employeeNum));
+                                numEmployees--;
 				return employeeRemoved;
 			}
 		}
@@ -148,6 +154,48 @@ public class MyHashTable {
                 e.printStackTrace();
             }
         }
+    
+    public void writeFile() throws IOException {
+        List<String> records = new ArrayList<String>();
+        File writeFile = new File("EmployeeList.csv");
+        FileWriter fw = new FileWriter(writeFile);
+        BufferedWriter bw = new BufferedWriter(fw);
+        for(int i = 0; i < buckets.length; i++) {
+            for(int j = 0; j <buckets[i].size(); j++) {
+                EmployeeInfo employeeSaved = buckets[i].get(j);   
+                int empNum = employeeSaved.getEmpNum();
+                String firstName = employeeSaved.getFirstName();
+                String lastName = employeeSaved.getLastName();
+                int gender = employeeSaved.getSex();
+                int location = employeeSaved.getWorkLoc();
+                double deductRate = employeeSaved.getDeductRate();
+                
+                if(employeeSaved instanceof FullTimeEmployee) {
+                    FullTimeEmployee FTE = (FullTimeEmployee) employeeSaved;
+                    double yearlySalary = FTE.calcAnnualGrossIncome();
+                    String writeFTE = "F," + empNum + "," + firstName + "," + lastName + "," + gender + "," + location + "," + deductRate + "," + yearlySalary;
+                    System.out.println(writeFTE);
+                    bw.write(writeFTE);          
+                    bw.newLine();
+                }
+                else if(employeeSaved instanceof PartTimeEmployee) {
+                    PartTimeEmployee PTE = (PartTimeEmployee) employeeSaved;
+                    double hourlyWage = PTE.getHourlyWage();
+                    double hoursWeek = PTE.getHoursPerWeek();
+                    double weeksYear = PTE.getWeeksPerYear();
+                    String writePTE = "P," + empNum + "," + firstName + "," + lastName + "," + gender + "," + location + "," + deductRate + "," + hourlyWage + "," + hoursWeek + "," + weeksYear;
+                    System.out.println(writePTE);
+                    bw.write(writePTE);
+                    bw.newLine();
+                }
+            }
+        }
+        bw.close();
+    }
+    
+    public int getNumEmp(){
+        return numEmployees;
+    }
 
 
 } // end class MyHashTable
