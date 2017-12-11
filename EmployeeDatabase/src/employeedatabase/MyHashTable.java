@@ -155,8 +155,8 @@ public class MyHashTable {
             }
         }
     
-    public void writeFile() throws IOException {
-        List<String> records = new ArrayList<String>();
+    public List<EmployeeInfo> writeFile() throws IOException {
+        List<EmployeeInfo> employeeList = new ArrayList<EmployeeInfo>();
         File writeFile = new File("EmployeeList.csv");
         FileWriter fw = new FileWriter(writeFile);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -177,6 +177,7 @@ public class MyHashTable {
                     System.out.println(writeFTE);
                     bw.write(writeFTE);          
                     bw.newLine();
+                    employeeList.add(FTE);
                 }
                 else if(employeeSaved instanceof PartTimeEmployee) {
                     PartTimeEmployee PTE = (PartTimeEmployee) employeeSaved;
@@ -187,10 +188,12 @@ public class MyHashTable {
                     System.out.println(writePTE);
                     bw.write(writePTE);
                     bw.newLine();
+                    employeeList.add(PTE);
                 }
             }
         }
         bw.close();
+        return employeeList;
     }
     
     public int getNumEmp(){
