@@ -55,8 +55,7 @@ public class EmployeeListFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1800, 900));
 
         jLabel1.setFont(new java.awt.Font("Agency FB", 0, 72)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(244, 248, 252));
@@ -73,6 +72,7 @@ public class EmployeeListFrame extends javax.swing.JFrame {
             new String [] {
                 "Type", "Employee #", "First Name", "Last Name", "Location", "Gender", "Deduction Rate", "Yearly Salary (F)", "Hourly Wage (P)", "Hours/Week (P)", "Weeks/Year (P)"
             }));
+            jTable1.setFillsViewportHeight(true);
             jTable1.setGridColor(new java.awt.Color(244, 248, 252));
             jScrollPane1.setViewportView(jTable1);
 
@@ -174,7 +174,7 @@ public class EmployeeListFrame extends javax.swing.JFrame {
                 
             },
             new String [] {
-                "Type", "Employee #", "First Name", "Last Name", "Location", "Gender", "Deduction Rate", "Yearly Salary (F)", "Hourly Wage (P)", "Hours/Week (P)", "Weeks/Year (P)"
+                "Type", "Employee #", "First Name", "Last Name", "Location", "Gender", "Deduction Rate", "Yearly Salary (F)", "Hourly Wage (P)", "Hours/Week (P)", "Weeks/Year (P)", "Annual Gross Income", "Annual Net Income"
             }));
         for(int i = 0; i < numRows; i++) {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -188,7 +188,9 @@ public class EmployeeListFrame extends javax.swing.JFrame {
                 int gender = employeeAdded.getSex();
                 int location = employeeAdded.getWorkLoc();
                 double deductRate = employeeAdded.getDeductRate();
-                model.addRow(new Object[] {"F", empNum, firstName, lastName, location, gender, deductRate, yearlySalary, "N/A", "N/A", "N/A"});
+                double grossIncome = FTE.calcAnnualGrossIncome();
+                double netIncome = FTE.calcAnnualNetIncome();
+                model.addRow(new Object[] {"F", empNum, firstName, lastName, location, gender, deductRate, yearlySalary, "N/A", "N/A", "N/A", grossIncome, netIncome});
             }
             else if(employeeAdded instanceof PartTimeEmployee) {
                 int empNum = employeeAdded.getEmpNum();
@@ -201,7 +203,9 @@ public class EmployeeListFrame extends javax.swing.JFrame {
                 double hourlyWage = PTE.getHourlyWage();
                 double hoursWeek = PTE.getHoursPerWeek();
                 double weeksYear = PTE.getWeeksPerYear();
-                model.addRow(new Object[] {"P", empNum, firstName, lastName, location, gender, deductRate, "N/A", hourlyWage, hoursWeek, weeksYear});                
+                double grossIncome = PTE.calcAnnualGrossIncome();
+                double netIncome = PTE.calcAnnualNetIncome();
+                model.addRow(new Object[] {"P", empNum, firstName, lastName, location, gender, deductRate, "N/A", hourlyWage, hoursWeek, weeksYear, grossIncome, netIncome});                
             }
         }
     }

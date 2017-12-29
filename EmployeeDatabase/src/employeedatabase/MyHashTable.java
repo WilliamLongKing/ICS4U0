@@ -11,7 +11,7 @@ public class MyHashTable {
 
 	// ATTRIBUTES
 
-	// buckets is an array of ArrayList.  Each item in an ArrayList is an EmployeeInfo object.
+	// buckets is an ArrayList of ArrayList.  Each item in an ArrayList is an EmployeeInfo object.
 	private ArrayList<EmployeeInfo>[] buckets;
         private ArrayList<EmployeeInfo>[] employeesToAdd;
         private int numEmployees;

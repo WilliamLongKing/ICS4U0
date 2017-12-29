@@ -115,7 +115,6 @@ public class MainFrame extends javax.swing.JFrame {
             
             editFirstName.setFont(bodyFont);
             editLastName.setFont(bodyFont);
-            editEmpNum.setFont(bodyFont);
             editLocation.setFont(bodyFont);
             editGender.setFont(bodyFont);
             editDeductRate.setFont(bodyFont);
@@ -222,7 +221,6 @@ public class MainFrame extends javax.swing.JFrame {
         editLocation = new javax.swing.JTextField();
         editGender = new javax.swing.JTextField();
         editDeductRate = new javax.swing.JTextField();
-        editEmpNum = new javax.swing.JTextField();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
@@ -236,7 +234,7 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
         setForeground(java.awt.Color.red);
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        setPreferredSize(new java.awt.Dimension(1200, 1035));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -995,10 +993,6 @@ public class MainFrame extends javax.swing.JFrame {
         editDeductRate.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         editDeductRate.setForeground(new java.awt.Color(244, 248, 252));
 
-        editEmpNum.setBackground(new java.awt.Color(72, 78, 96));
-        editEmpNum.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        editEmpNum.setForeground(new java.awt.Color(244, 248, 252));
-
         jButton12.setBackground(new java.awt.Color(77, 78, 96));
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton12.setForeground(new java.awt.Color(244, 248, 252));
@@ -1068,7 +1062,6 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(editFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editEmpNum, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editGender, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1084,9 +1077,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jButton8))
+                            .addComponent(jButton8)
                             .addComponent(jButton14))
                         .addGap(101, 101, 101))))
         );
@@ -1114,9 +1105,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(searchFirstName1)
                                 .addGap(12, 12, 12)
-                                .addComponent(searchLastName1)
-                                .addGap(12, 12, 12)
-                                .addComponent(searchEmpNum))
+                                .addComponent(searchLastName1))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(editFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1127,9 +1116,9 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addComponent(searchLastName))
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(editEmpNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel29))
-                                .addGap(10, 10, 10)
+                                    .addComponent(jLabel29)
+                                    .addComponent(searchEmpNum))
+                                .addGap(13, 13, 13)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(editGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel28)
@@ -1169,7 +1158,6 @@ public class MainFrame extends javax.swing.JFrame {
         editLocation.setVisible(false);
         editGender.setVisible(false);
         editDeductRate.setVisible(false);
-        editEmpNum.setVisible(false);
         jButton13.setVisible(false);
         jButton14.setVisible(false);
 
@@ -1336,7 +1324,6 @@ public class MainFrame extends javax.swing.JFrame {
         jButton2.setEnabled(false);
         editFirstName.setText("");
         editLastName.setText("");
-        editEmpNum.setText("");
         editGender.setText("");
         editLocation.setText("");
         editDeductRate.setText("");
@@ -1347,7 +1334,6 @@ public class MainFrame extends javax.swing.JFrame {
         
         editFirstName.setVisible(false);
         editLastName.setVisible(false);
-        editEmpNum.setVisible(false);
         editGender.setVisible(false);
         editLocation.setVisible(false);
         editDeductRate.setVisible(false);
@@ -1362,6 +1348,8 @@ public class MainFrame extends javax.swing.JFrame {
         jCheckBox4.setSelected(false);
         jButton13.setVisible(false);
         jButton14.setVisible(false);
+        
+        jLabel19.setText("A Java Application by William King");
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1452,30 +1440,37 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_weeksYearFieldActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
-        int empNum =  Integer.parseInt(empNumField.getText());
-        int locationNum = Integer.parseInt(locationField.getText());
-        int genderNum = Integer.parseInt(genderField.getText());
-        double deductNum = Double.parseDouble(deductRateField.getText());
-        
-        if(jCheckBox1.isSelected()) {
-            double yearlySalary = Double.parseDouble(yearlySalaryField.getText());
-            FullTimeEmployee fte = new FullTimeEmployee(empNum, firstName, lastName, locationNum, genderNum, deductNum, yearlySalary);
-            employeeHashTable.addEmployee(fte);
+        try {
+            // TODO add your handling code here:
+            String firstName = firstNameField.getText();
+            String lastName = lastNameField.getText();
+            int empNum =  Integer.parseInt(empNumField.getText());
+            int locationNum = Integer.parseInt(locationField.getText());
+            int genderNum = Integer.parseInt(genderField.getText());
+            double deductNum = Double.parseDouble(deductRateField.getText());
+            
+            if(jCheckBox1.isSelected()) {
+                double yearlySalary = Double.parseDouble(yearlySalaryField.getText());
+                FullTimeEmployee fte = new FullTimeEmployee(empNum, firstName, lastName, locationNum, genderNum, deductNum, yearlySalary);
+                employeeHashTable.addEmployee(fte);
+            }
+            else if(jCheckBox2.isSelected()) {
+                double hourlyWage = Double.parseDouble(hourlyWageField.getText());
+                double hoursWeek = Double.parseDouble(hoursWeekField.getText());
+                double weeksYear = Double.parseDouble(weeksYearField.getText());
+                PartTimeEmployee pte = new PartTimeEmployee(empNum, firstName, lastName, locationNum, genderNum, deductNum, hourlyWage, hoursWeek, weeksYear);
+                employeeHashTable.addEmployee(pte);
+            }
+            employeeHashTable.displayContents();
+            EmployeeAddedDialog confirmation = new EmployeeAddedDialog();
+            confirmation.setVisible(true);
+            reset();
+            jLabel19.setText("Employee Added.");
+        } catch (FontFormatException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else if(jCheckBox2.isSelected()) {
-            double hourlyWage = Double.parseDouble(hourlyWageField.getText());
-            double hoursWeek = Double.parseDouble(hoursWeekField.getText());
-            double weeksYear = Double.parseDouble(weeksYearField.getText());
-            PartTimeEmployee pte = new PartTimeEmployee(empNum, firstName, lastName, locationNum, genderNum, deductNum, hourlyWage, hoursWeek, weeksYear);
-            employeeHashTable.addEmployee(pte);
-        }
-        employeeHashTable.displayContents();
-        EmployeeAddedDialog confirmation = new EmployeeAddedDialog();
-        confirmation.setVisible(true);
-        reset();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1503,7 +1498,6 @@ public class MainFrame extends javax.swing.JFrame {
         
         editFirstName.setVisible(false);
         editLastName.setVisible(false);
-        editEmpNum.setVisible(false);
         editGender.setVisible(false);
         editLocation.setVisible(false);
         editDeductRate.setVisible(false);
@@ -1570,6 +1564,7 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         employeeHashTable.removeEmployee(Integer.parseInt(searchEmpNum.getText()));
         reset();
+        jLabel19.setText("Employee Removed.");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -1592,7 +1587,6 @@ public class MainFrame extends javax.swing.JFrame {
         EmployeeInfo employeeResult = employeeHashTable.searchByEmployeeNumber(Integer.parseInt(searchNumField.getText()));
         searchFirstName1.setVisible(false);
         searchLastName1.setVisible(false);
-        searchEmpNum.setVisible(false);
         searchLocation.setVisible(false);
         searchGender.setVisible(false);
         searchDeductRate.setVisible(false);
@@ -1603,7 +1597,6 @@ public class MainFrame extends javax.swing.JFrame {
         
         editFirstName.setVisible(true);
         editLastName.setVisible(true);
-        editEmpNum.setVisible(true);
         editGender.setVisible(true);
         editLocation.setVisible(true);
         editDeductRate.setVisible(true);
@@ -1636,12 +1629,11 @@ public class MainFrame extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         EmployeeInfo employeeResult = employeeHashTable.searchByEmployeeNumber(Integer.parseInt(searchNumField.getText()));
-        
-        employeeHashTable.removeEmployee(Integer.parseInt(searchEmpNum.getText()));
+        int empNum = Integer.parseInt(searchEmpNum.getText());
+        employeeHashTable.removeEmployee(empNum);
         
         String firstName = editFirstName.getText();
         String lastName = editLastName.getText();
-        int empNum = Integer.parseInt(editEmpNum.getText());
         int gender = Integer.parseInt(editGender.getText());
         int workLoc = Integer.parseInt(editLocation.getText());
         double deductRate = Double.parseDouble(editDeductRate.getText());
@@ -1669,6 +1661,7 @@ public class MainFrame extends javax.swing.JFrame {
        
         employeeHashTable.displayContents();
         reset();
+        jLabel19.setText("Employee Edited and Saved.");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jCheckBox3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox3KeyPressed
@@ -1692,6 +1685,7 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             employeeHashTable.writeFile();
+            jLabel19.setText("Saved to File!");
         } catch (IOException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1742,7 +1736,6 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField deductRateField;
     private javax.swing.JTextField editDeductRate;
-    private javax.swing.JTextField editEmpNum;
     private javax.swing.JTextField editFirstName;
     private javax.swing.JTextField editGender;
     private javax.swing.JTextField editHourlyWage;

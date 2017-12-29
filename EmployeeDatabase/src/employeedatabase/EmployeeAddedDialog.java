@@ -5,6 +5,15 @@
  */
 package employeedatabase;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author willi
@@ -14,8 +23,19 @@ public class EmployeeAddedDialog extends javax.swing.JFrame {
     /**
      * Creates new form employeeAddedDialog
      */
-    public EmployeeAddedDialog() {
+    public EmployeeAddedDialog() throws FontFormatException, IOException {
         initComponents();
+        getContentPane().setBackground(new Color(48, 55, 69));
+        Font titleFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\julius-sans-one\\JuliusSansOne-Regular.ttf")).deriveFont(62f);
+        Font sectionFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\julius-sans-one\\JuliusSansOne-Regular.ttf")).deriveFont(48f);
+        Font headerFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\Oswald\\Oswald-Regular.ttf")).deriveFont(26f);
+        Font bodyFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\Raleway\\Raleway-Regular.ttf")).deriveFont(28f);
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\julius-sans-one\\JuliusSansOne-Regular.ttf")));
+        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\Oswald\\Oswald-Regular.ttf")));
+        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("fonts\\Raleway\\Raleway-Regular.ttf")));
+        jLabel1.setFont(sectionFont);
+        jButton1.setFont(headerFont);
     }
 
     /**
@@ -31,12 +51,15 @@ public class EmployeeAddedDialog extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(330, 150));
+        setPreferredSize(new java.awt.Dimension(450, 175));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(244, 248, 252));
         jLabel1.setText("Employee Added!");
 
+        jButton1.setBackground(new java.awt.Color(77, 78, 96));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(244, 248, 252));
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,20 +72,21 @@ public class EmployeeAddedDialog extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(12, 12, 12))
+                .addComponent(jLabel1)
+                .addGap(0, 24, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -104,7 +128,13 @@ public class EmployeeAddedDialog extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmployeeAddedDialog().setVisible(true);
+                try {
+                    new EmployeeAddedDialog().setVisible(true);
+                } catch (FontFormatException ex) {
+                    Logger.getLogger(EmployeeAddedDialog.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(EmployeeAddedDialog.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
